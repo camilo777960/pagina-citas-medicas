@@ -1,0 +1,128 @@
+/* Estilos básicos */
+
+/* Aplica la fuente Arial al texto y elimina márgenes y relleno por defecto */
+body {
+    font-family: Arial, sans-serif; /* Establece la fuente principal del sitio */
+    margin: 0; /* Elimina el margen por defecto en el body */
+    padding: 0; /* Elimina el padding por defecto en el body */
+}
+
+/* Estilo para el header: fondo oscuro, texto blanco y centrado */
+header {
+    background-color: #13515f; /* Establece un fondo de color gris oscuro */
+    color: white; /* Establece el color del texto a blanco */
+    padding: 20px; /* Aplica un relleno de 20px alrededor del contenido */
+    text-align: center; /* Centra el contenido del header */
+}
+
+/* Elimina los puntos y sangrías de las listas en el menú de navegación */
+nav ul {
+    list-style: none; /* Elimina los puntos de las listas */
+    padding: 0; /* Elimina el padding por defecto */
+}
+
+/* Estilo para los elementos de lista dentro del menú de navegación */
+nav ul li {
+    display: inline; /* Muestra los elementos de la lista en línea (horizontalmente) */
+    margin: 0 15px; /* Aplica márgenes de 15px a la izquierda y derecha */
+}
+
+/* Estilo de los enlaces dentro del menú de navegación */
+nav ul li a {
+    color: white; /* Establece el color del texto a blanco */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-size: 18px; /* Establece el tamaño de la fuente */
+}
+
+/* Estilo para el contenido principal */
+main {
+    margin: 20px; /* Aplica un margen de 20px alrededor del contenido principal */
+}
+
+/* Sección oculta por defecto */
+section {
+    display: none; /* Oculta todas las secciones por defecto */
+}
+
+/* Muestra la sección que tiene la clase "active" */
+section.active {
+    display: block; /* Muestra las secciones que tienen la clase "active" */
+}
+
+/* Clase para ocultar elementos */
+.hidden {
+    display: none; /* Oculta el elemento con esta clase */
+}
+
+/* Estilo de las imágenes */
+
+/* Ajusta las imágenes para que no se desborden y tengan un tamaño adecuado */
+img {
+    width: 100%; /* Las imágenes se ajustan al 100% del contenedor */
+    max-width: 500px; /* Limita el ancho máximo de las imágenes a 500px */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Convierte la imagen en un bloque para que no haya espacio debajo */
+    margin: 0 auto; /* Centra la imagen en su contenedor */
+}
+
+/* Estilo para los formularios */
+
+/* Aplica un contorno y un padding al formulario */
+form {
+    max-width: 600px; /* Limita el ancho máximo del formulario a 600px */
+    margin: 20px auto; /* Centra el formulario y aplica margen de 20px */
+    padding: 20px; /* Aplica relleno de 20px en el formulario */
+    border: 1px solid #ddd; /* Aplica un borde de 1px de color gris claro */
+    border-radius: 5px; /* Redondea las esquinas del formulario */
+}
+
+/* Estilo para los grupos de formulario (como los campos de texto) */
+.form-group {
+    margin-bottom: 15px; /* Aplica un margen inferior de 15px a cada grupo de formulario */
+}
+
+/* Estilo para las etiquetas dentro de los formularios */
+.form-group label {
+    display: block; /* Hace que la etiqueta sea un bloque para que esté por encima del campo */
+    font-weight: bold; /* Pone la etiqueta en negrita */
+}
+
+/* Estilo para los campos de entrada y las áreas de texto */
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Hace que los campos de entrada ocupen todo el ancho disponible */
+    padding: 10px; /* Aplica un relleno de 10px en los campos */
+    border: 1px solid #ccc; /* Aplica un borde de 1px de color gris claro */
+    border-radius: 5px; /* Redondea las esquinas de los campos */
+}
+
+/* Estilo para los botones */
+
+button {
+    background-color: #2d3a3d; /* Establece un fondo oscuro para el botón */
+    color: white; /* Pone el texto del botón en blanco */
+    padding: 10px 15px; /* Aplica un relleno de 10px arriba y abajo, y 15px a los lados */
+    border: none; /* Elimina el borde por defecto del botón */
+    border-radius: 5px; /* Redondea las esquinas del botón */
+    cursor: pointer; /* Cambia el cursor a una mano cuando pasa sobre el botón */
+}
+
+/* Estilo para el botón cuando se pasa el cursor sobre él (hover) */
+button:hover {
+    background-color: #1f2b2d; /* Cambia el fondo del botón a un tono más oscuro */
+}
+
+/* Estilo para los mensajes de cita */
+
+.mensaje-cita {
+    text-align: center; /* Centra el texto dentro del mensaje */
+    margin-top: 20px; /* Aplica un margen superior de 20px */
+    padding: 20px; /* Aplica relleno de 20px alrededor del mensaje */
+    border: 2px solid #4CAF50; /* Aplica un borde verde alrededor del mensaje */
+    background-color: #e8f5e9; /* Establece un fondo verde claro */
+    border-radius: 10px; /* Redondea las esquinas del mensaje */
+    color: #2e7d32; /* Establece el color del texto a verde oscuro */
+    font-family: Arial, sans-serif; /* Establece la fuente a Arial */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil alrededor del mensaje */
+}
+

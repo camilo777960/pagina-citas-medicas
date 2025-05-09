@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Agendamiento de citas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .hidden { display: none; }
+        .active { display: block; }
+        button, select {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AGENDAMIENTO DE CITAS MÉDICAS</h1>
+        <nav>
+            <ul>
+                <li><a href="#" data-section="inicio">Inicio</a></li>
+                <li><a href="#" data-section="motivo_de_la_consulta">Motivo de la consulta</a></li>
+                <li><a href="#" data-section="fechas_disponibles">Fechas disponibles</a></li>
+                <li><a href="#" data-section="lugares_disponibles">Lugares disponibles</a></li>
+                <li><a href="#" data-section="datos_personales">Datos personales</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Inicio -->
+        <section id="inicio" class="active">
+            <h2>AGENDA TU CITA MÉDICA</h2>
+            <p>Página oficial para agendar citas médicas en la localidad de Usme</p>
+            <img src="https://th.bing.com/th/id/OIP.cuUAUZV09mbKvcjjPOtDRwHaEK?rs=1&pid=ImgDetMain" alt="Imagen desde Bing">
+        </section>
+
+        <!-- Motivo de la consulta -->
+        <section id="motivo_de_la_consulta" class="hidden">
+            <h2>¿Cuál es el motivo de su consulta médica?</h2>
+            <form>
+                <label for="motivo">Escribe el motivo:</label><br>
+                <textarea id="motivo" name="motivo" rows="6" cols="60"></textarea><br><br>
+                <button type="button" onclick="showSection('fechas_disponibles')">Siguiente</button>
+            </form>
+        </section>
+
+        <!-- Fechas disponibles -->
+        <section id="fechas_disponibles" class="hidden">
+            <h2>Fechas disponibles para su cita médica</h2>
+            <h4>- Lunes 31 de marzo</h4>
+            <p>8:40AM - 9:00AM</p>
+            <p>10:00AM - 10:20AM</p>
+            <p>11:20AM - 11:40AM</p>
+
+            <h4>Jueves 3 de abril</h4>
+            <p>7:00AM - 7:20AM</p>
+            <p>7:30AM - 7:50AM</p>
+            <p>12:00PM - 12:20PM</p>
+
+            <h4>Sábado 5 de abril</h4>
+            <p>9:40AM - 10:00AM</p>
+            <p>11:10AM - 11:30AM</p>
+            <p>11:50AM - 12:10PM</p>
+
+            <label for="fecha-select"><strong>Seleccione la fecha:</strong></label><br>
+            <select id="fecha-select">
+                <option value="">-- Elegir una fecha --</option>
+                <option value="2025-03-31">Lunes 31 de marzo</option>
+                <option value="2025-04-03">Jueves 3 de abril</option>
+                <option value="2025-04-05">Sábado 5 de abril</option>
+            </select><br><br>
+
+            <button type="button" onclick="irALugares()">Siguiente</button>
+        </section>
+
+        <!-- Lugares disponibles -->
+        <section id="lugares_disponibles" class="hidden">
+            <h2>Lugares disponibles para su cita médica</h2>
+            <h4>Upa Marichuela</h4>
+            <p>Cl. 76 #14 - 74, Bogotá</p>
+            <img src="https://www.usme.com.co/wp-content/uploads/cache/images/upa-la-marichuela/upa-la-marichuela-3142521073.jpg" alt="Imagen UPA La Marichuela">
+
+            <h4>Cami Santa Librada</h4>
+            <p>Carrera 1c Este # 75 Sur-15, Bogotá</p>
+            <img src="https://www.usme.com.co/wp-content/uploads/cache/images/cami-santa-librada/cami-santa-librada-3445725425.jpg" alt="Imagen Cami Santa Librada">
+
+            <h4>Upa Yomasa</h4>
+            <p>Carrera 10 # 81A - 06 sur Bogotá</p>
+            <img src="https://www.usme.com.co/wp-content/uploads/cache/images/upa-yomasa-hospital-usme/upa-yomasa-hospital-usme-3451952888.jpg" alt="Imagen UPA Yomasa Hospital Usme">
+
+            <label for="lugar-select"><strong>Seleccione el lugar:</strong></label><br>
+            <select id="lugar-select">
+                <option value="">-- Elegir un lugar --</option>
+                <option value="Upa Marichuela">Upa Marichuela</option>
+                <option value="Cami Santa Librada">Cami Santa Librada</option>
+                <option value="Upa Yomasa">Upa Yomasa</option>
+            </select><br><br>
+
+            <button type="button" onclick="irADatos()">Siguiente</button>
+        </section>
+
+        <!-- Datos personales -->
+        <section id="datos_personales" class="hidden">
+            <h2>Ingrese los siguientes datos para completar el agendamiento de su cita médica</h2>
+            <form action="javascript:void(0);" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="Tu correo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input id="edad" name="edad" placeholder="Escribe tu edad" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lugar">Lugar:</label>
+                    <input type="text" id="lugar" name="lugar" placeholder="Lugar de su cita médica" required>
+                </div>
+
+                <input type="submit" id="btn-agendar" value="Enviar">
+            </form>
+            <div id="mensaje-cita" class="mensaje-cita"></div>
+        </section>
+    </main>
+
+    <script>
+        const links = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+
+        function showSection(id) {
+            sections.forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.remove('hidden');
+            document.getElementById(id).classList.add('active');
+        }
+
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                showSection(link.getAttribute('data-section'));
+            });
+        });
+
+        function irALugares() {
+            const fecha = document.getElementById("fecha-select").value;
+            if (fecha) {
+                document.getElementById("fecha").value = fecha;
+                showSection('lugares_disponibles');
+            } else {
+                alert("Por favor, seleccione una fecha.");
+            }
+        }
+
+        function irADatos() {
+            const lugar = document.getElementById("lugar-select").value;
+            if (lugar) {
+                document.getElementById("lugar").value = lugar;
+                showSection('datos_personales');
+            } else {
+                alert("Por favor, seleccione un lugar.");
+            }
+        }
+
+        document.getElementById("btn-agendar").addEventListener("click", function () {
+            const nombre = document.getElementById("nombre").value;
+            const email = document.getElementById("email").value;
+            const edad = document.getElementById("edad").value;
+            const fecha = document.getElementById("fecha").value;
+            const lugar = document.getElementById("lugar").value;
+
+            const mensaje = `
+                <h3>✅ Su cita ha sido agendada exitosamente</h3>
+                <p><strong>Nombre:</strong> ${nombre}</p>
+                <p><strong>Correo:</strong> ${email}</p>
+                <p><strong>Edad:</strong> ${edad}</p>
+                <p><strong>Fecha:</strong> ${fecha}</p>
+                <p><strong>Lugar:</strong> ${lugar}</p>
+            `;
+
+            document.getElementById("mensaje-cita").innerHTML = mensaje;
+            document.querySelector('.contact-form').reset();
+        });
+    </script>
+</body>
+</html>
